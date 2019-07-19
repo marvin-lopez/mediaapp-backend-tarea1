@@ -15,8 +15,8 @@ public class PersonaServiceImpl implements IPersonaService {
     private IPersonaRepo repo;
 
     @Override
-    public void registrar(Persona obj) {
-        repo.save(obj);
+    public Persona registrar(Persona obj) {
+       return  repo.save(obj);
     }
 
     @Override

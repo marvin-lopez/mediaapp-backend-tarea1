@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IPersonaService  {
 
-    void registrar(Persona obj);
+    Persona registrar(Persona obj);
     void modificar(Persona obj);
     List<Persona> listar();
     Persona leerPorId(Integer id);

@@ -16,12 +16,12 @@ public class PersonaServiceImpl implements IPersonaService {
 
     @Override
     public Persona registrar(Persona obj) {
-       return  repo.save(obj);
+        return  repo.save(obj);
     }
 
     @Override
-    public void modificar(Persona obj) {
-       repo.save(obj);
+    public Persona modificar(Persona obj) {
+        return repo.save(obj);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class PersonaServiceImpl implements IPersonaService {
 
     @Override
     public void eliminar(Integer id) {
-             repo.delete(id);
+        repo.delete(id);
     }
 }

@@ -12,17 +12,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 
 
-//http://172.23.1.139:8080/swagger-ui.html
-//@Configuration
-//@EnableSwagger2
+//http://localhost:8080/swagger-ui.html
+//http://localhost:8080/v2/api-docs
+@Configuration
+@EnableSwagger2
 public class SwaggerConfig {
-  /*  public static final Contact DEFAULT_CONTACT = new Contact("contact","UrlConact","prueba@correo.com");
+    public static final Contact DEFAULT_CONTACT = new Contact(null,null,null);
     public static final ApiInfo DEFAULT_API_INFO =
             new ApiInfo("API Documentation","Documentación de servicios REST Tarea 1 ",
-                    "1.0","pagina.com",DEFAULT_CONTACT,"lic","prueba",new ArrayList<VendorExtension>());
+                    "1.0",null,DEFAULT_CONTACT,null,null,new ArrayList<VendorExtension>());
 
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(DEFAULT_API_INFO);
-    }*/
+    }
 }

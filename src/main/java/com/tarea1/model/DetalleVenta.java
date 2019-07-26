@@ -1,10 +1,31 @@
 package com.tarea1.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+
+@Entity
+@Table(name = "detalle_venta")
 public class DetalleVenta {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idDetalleVenta;
-    private Venta idVenta;
-    private Producto idPRoducto;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="id_venta", nullable = false,foreignKey = @ForeignKey(name = "fk_detalle_venta_venta"))
+    private Venta venta;
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto",nullable = false,foreignKey = @ForeignKey(name="fk_detalle_venta_productos"))
+    private Producto producto;
+
+
+    @Min(value=1)
+    @Column(name="cantidad",nullable = false)
     private Integer cantidad;
 
     public Integer getIdDetalleVenta() {
@@ -15,20 +36,20 @@ public class DetalleVenta {
         this.idDetalleVenta = idDetalleVenta;
     }
 
-    public Venta getIdVenta() {
-        return idVenta;
+    public Venta getVenta() {
+        return venta;
     }
 
-    public void setIdVenta(Venta idVenta) {
-        this.idVenta = idVenta;
+    public void setVenta(Venta venta) {
+        this.venta = venta;
     }
 
-    public Producto getIdPRoducto() {
-        return idPRoducto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setIdPRoducto(Producto idPRoducto) {
-        this.idPRoducto = idPRoducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public Integer getCantidad() {
